@@ -1,0 +1,20 @@
+.mentionImg {
+	width: 64px;
+	height: 64px;
+}
+
+.well {
+	padding: 10px;
+}
+
+.mention {
+	position: relative;
+}
+
+.mentionBadge {
+	/*width: 32px;
+	height: 32px;
+	position: absolute;
+	left: -10px;
+	top: -10px;*/
+}
