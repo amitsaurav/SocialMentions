@@ -52,7 +52,7 @@ var capture = function (userName, userText, userImage, channelName, socketName) 
 var io = require('socket.io').listen(app.listen(3000));
 io.sockets.on('connection', function (socket) {
   console.log('Connection established with client');
-  twitterStream.stream("Amazon", capture, socket);
+  twitterStream.stream("amazon", capture, socket);
 });
 
 console.log('listening on port 3000...');
