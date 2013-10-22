@@ -16,12 +16,14 @@ app.configure(function() {
 });
 
 var Mention = new Schema({
+  keyword: { type: String, required: true },
   user: { type: String, required: true },
   text: { type: String, required: true },
-  image: {type: String },
-  channel: {type: String, required: true },
-  timeId: {type: Date, default: Date.now}
+  image: { type: String },
+  channel: { type: String, required: true },
+  timeId: { type: Date, default: Date.now }
 });
+
 var MentionModel = mongoose.model('Mention', Mention);
 
 /* Home page */
@@ -29,15 +31,16 @@ app.get('/', function(req, res) {
   res.sendfile(__dirname + '/static/index.html');
 });
 
-var capture = function (userName, userText, userImage, channelName, socketName) {
+var capture = function (keyword, userName, userText, userImage, channelName, socketName) {
   var newMention = new MentionModel({
+    keyword: keyword,
     user: userName,
     text: userText,
     image: userImage,
     channel: channelName,
   });
 
-  console.log("Created new mention: " + newMention.user + ", " + newMention.text + ", " + 
+  console.log("Created new mention for " + newMention.keyword + " for user: " + newMention.user + ", " + newMention.text + ", " + 
   	newMention.image + ", " + newMention.channel);
   newMention.save(function (err) {
   	if (!err) {

@@ -1,6 +1,6 @@
 $(function() {
   var socket = io.connect('http://localhost:3000');
-  var mentionContainer = $('.container');
+  var mentionContainer = $('#mentions-container');
   var mentionCount = 0;
 
   socket.on('message', function (data) {
@@ -10,6 +10,15 @@ $(function() {
     } else {
       console.info("There is a problem:", data);
     }
+  });
+
+  $('.nav-links>a').click(function() {
+    $('.container>div').hide();
+    $('.nav-links').removeClass('active');
+
+    $('#' + this.id + '-container').show();
+    $(this).parent().addClass('active');
+    return false;
   });
 
   var addMention = function (mention, mentionCount) {

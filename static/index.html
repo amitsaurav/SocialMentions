@@ -8,17 +8,27 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <a class="brand" href="#">Social Mentions</a>
-        <ul class="nav">
-          <li class="active"><a href="#">Mentions</a></li>
-          <li><a href="#">Keywords</a></li>
-          <li><a href="#">Channels</a></li>
-        </ul>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active nav-links"><a href="#" id="mentions">Mentions</a></li>
+            <li class="nav-links"><a href="#" id="keywords">Keywords</a></li>
+            <li class="nav-links"><a href="#" id="channels">Channels</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="container">
+      <div id="mentions-container">
+      </div>
+
+      <div id="keywords-container" class="hidden">
+      </div>
+
+      <div id="channels-container" class="hidden">
+      </div>
     </div>
 
     <script src="js/jquery-v2.0.3.min.js"></script>

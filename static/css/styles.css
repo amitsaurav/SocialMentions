@@ -11,10 +11,10 @@
 	position: relative;
 }
 
-.mentionBadge {
-	/*width: 32px;
-	height: 32px;
-	position: absolute;
-	left: -10px;
-	top: -10px;*/
+.hidden {
+	display: none;
+}
+
+.container {
+	padding-top: 70px;
 }
